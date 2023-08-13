@@ -5,7 +5,7 @@ from Apps.empresa.models import empresa
 
 class Colaboradores(models.Model):
       nome = models.CharField(max_length=100)
-      user = models.OneToOneField(User, on_delete=models.CASCADE)
+      user = models.OneToOneField(User, on_delete=models.PROTECT)
       departamento = models.ManyToManyField(Departamento)
       empresa = models.ForeignKey(empresa, on_delete=models.PROTECT)
 
